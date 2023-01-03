@@ -1,0 +1,8 @@
+- name: Install MongoDB
+  yum:
+    name:
+      - mongodb-org-server=1:3.6.3-0centos1.1
+      - mongodb-org-mongos=1:3.6.3-0centos1.1
+      - mongodb-org-shell=1:3.6.3-0centos1.1
+      - mongodb-org-tools=1:3.6.3-0centos1.1 
+    update_cache: true
