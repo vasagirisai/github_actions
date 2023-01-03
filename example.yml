@@ -6,4 +6,4 @@
     - name: Update apt cache and make sure Vim is installed
       ansible.builtin.apt:
         name: vim
-        update_cache: true
+        update_cache: yes
