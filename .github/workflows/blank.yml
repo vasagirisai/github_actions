@@ -17,4 +17,4 @@ jobs:
         sudo python -m pip install ansible-lint
     - name: Run ansible-lint
       run: |
-        ansible-lint **/*.yml
+        ansible-lint *.yml
