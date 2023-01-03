@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: redhat-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
@@ -16,10 +16,8 @@ jobs:
         python-version: 3.7
     - name: Install dependencies
       run: |
-        sudo apt update
-        sudo apt install software-properties-common
-        sudo apt-add-repository --yes --update ppa:ansible/ansible
-        sudo apt install ansible
+        sudo yum install epel-release
+        sudo yum install ansible
         sudo python -m pip install ansible-lint
     - name: Run ansible-lint
       run: |
