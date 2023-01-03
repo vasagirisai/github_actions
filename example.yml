@@ -1,5 +1,5 @@
 ---
-- name: To check the ansible lint 
+- name: To check the ansible lint
   hosts: all
   become: yes
   tasks:
