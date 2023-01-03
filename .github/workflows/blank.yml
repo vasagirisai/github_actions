@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: redhat-latest
+    runs-on: redhat-slim-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
