@@ -1,9 +1,9 @@
 ---
 - name: To check the ansible lint
   hosts: all
-  become: yes
+  become: ture
   tasks:
     - name: Update apt cache and make sure Vim is installed
-      apt:
+      ansible.builtin.apt:
         name: vim
-        update_cache: yes
+        update_cache: true
