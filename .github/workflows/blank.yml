@@ -13,8 +13,8 @@ jobs:
         python-version: 3.7
     - name: Install dependencies
       run: |
-        apt install ansible
-        python -m pip install ansible-lint
+        sudo apt install ansible
+        sudo python -m pip install ansible-lint
     - name: Run ansible-lint
       run: |
         ansible-lint **/*.yml
