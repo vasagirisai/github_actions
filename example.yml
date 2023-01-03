@@ -3,7 +3,7 @@
   hosts: all
   become: ture
   tasks:
-    - name: install vim package
+    - name: Install vim package
       ansible.builtin.apt:
         name: vim
-        update_cache: yes
+        update_cache: true
