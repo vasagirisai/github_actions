@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: To check the ansible lint 
+  hosts: all
   become: yes
   tasks:
     - name: Update apt cache and make sure Vim is installed
