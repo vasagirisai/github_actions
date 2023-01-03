@@ -3,7 +3,7 @@ name: ansible-lint
 on:
   push:
     paths:
-      - 'playbook.yml'
+      - 'example.yml'
 
 jobs:
   build:
@@ -23,4 +23,4 @@ jobs:
         sudo python -m pip install ansible-lint
     - name: Run ansible-lint
       run: |
-        ansible-lint playbook.yml
+        ansible-lint example.yml
