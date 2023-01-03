@@ -13,7 +13,11 @@ jobs:
         python-version: 3.7
     - name: Install dependencies
       run: |
+        apt update
+        apt install software-properties-common
+        apt-add-repository --yes --update ppa:ansible/ansible
+        apt install ansible
         python -m pip install ansible-lint
     - name: Run ansible-lint
       run: |
-        ansible-lint .
+        ansible-lint **/*.yml
