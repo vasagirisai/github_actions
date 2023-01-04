@@ -31,5 +31,5 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_label:  "automated pr"
         pr_title: "create pb_lint_check.yml"
-        reviewers: vasagirisai
+        reviewers: vasagirisai,vijayalakshmi
     
