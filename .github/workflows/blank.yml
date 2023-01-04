@@ -34,9 +34,13 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_label:  "automated pr"
         pr_title: "auto assign"
-    - name: Auto assign reviewers
-      uses: delivery-much/actions-assigner@v1
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        team-reviewers: vasagirisai
+  request:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create PR review request
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+          gh pr edit ${{ github.event.pull_request.html_url }} \
+              --add-reviewer yourorg/core
     
