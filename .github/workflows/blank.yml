@@ -4,6 +4,17 @@ on:
   push:
     branches:
       - vasagirisai-patch-1
+  workflow_dispatch:
+    inputs:
+      DB:
+        description: 'Destination_branch'
+        required: true
+        default: "main"
+      PR_Title:
+        description: 'title'
+        required: true
+        default: "pr title"
+      
 
 jobs:
   build:
@@ -24,12 +35,15 @@ jobs:
         ansible-lint *.yml
     - name: Check out repository code
       uses: actions/checkout@v2
+    - name: Execute Test Script
+      run: |
+        echo "Store: ${{ github.event.inputs.DB }} & ${{ github.event.inputs.PR_Title }}"
     - name: create pull request
       uses: repo-sync/pull-request@v2
       with:
-        destination_branch: "main"
+        destination_branch: "${{ github.event.inputs.DB }}"
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_label:  "automated pr"
-        pr_title: "create pb_lint_check.yml"
+        pr_title: "${{ github.event.inputs.PR_Title }}"
         reviewers: vasagirisai,vijayalakshmi
     
