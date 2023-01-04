@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - vasagirisai-patch-1
+  pull_request:
+    types:
+      - opened
 
 jobs:
   build:
