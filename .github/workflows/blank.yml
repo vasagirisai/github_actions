@@ -31,3 +31,9 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_label: "vasagirisai-pr-1, automated pr"
         pr_title: "create pb_lint_check.yml"
+    - name: Add Reviewers to Pull Request
+      run: |
+        curl -s -X POST -H "Authorization: token ${GITHUB_TOKEN}" \
+             -H "Accept: application/vnd.github+json" \
+             -d "{\"reviewers\": [\"reviewer1\", \"reviewer2\"]}" \
+             "https://api.github.com/repos/${GITHUB_CONTEXT.repository}/pulls/${GITHUB_CONTEXT.pull_request.number}/requested_reviewers"
