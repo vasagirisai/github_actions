@@ -1,6 +1,9 @@
 name: ansible-lint
 
-on: [push]
+on:
+  push:
+    branches:
+      - vasagirisai-patch-1
 
 jobs:
   build:
@@ -19,12 +22,12 @@ jobs:
     - name: Run ansible-lint
       run: |
         ansible-lint *.yml
-    - name: Create PR
-      if: success()
-      run: |
-          # Prompt the user for a PR title
-          echo "Enter the PR title:"
-          read title
-
-          # Create the PR
-          hub pull-request -m "$title"
+    - name: Check out repository code
+      uses: actions/checkout@v2
+    - name: create pull request
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "main"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        pr_label: "vasagirisai-pr-1, automated pr"
+        pr_title: "create pb_lint_check.yml"
