@@ -31,4 +31,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_label:  "automated pr"
         pr_title: "auto assign pr"
-        reviewers: "vasagirisai"
+        Reviewers: "vasagirisai"
