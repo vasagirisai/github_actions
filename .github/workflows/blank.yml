@@ -30,6 +30,10 @@ jobs:
         destination_branch: "main"
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_label:  "automated pr"
-        pr_title: "test"
-        reviewers: vasagirisai,vijayalakshmi
+        pr_title: "auto assign"
+    - name: Auto assign reviewers
+      uses: delivery-much/actions-assigner@v1
+      with:
+        token: ${{ secrets.GH_TOKEN }}
+        team-reviewers: vasagirisai
     
