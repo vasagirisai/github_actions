@@ -1,7 +1,7 @@
 ---
 - name: To check the ansible lint
   hosts: all
-  become: ture
+  become: true
   tasks:
     - name: Install vim package
       ansible.builtin.apt:
