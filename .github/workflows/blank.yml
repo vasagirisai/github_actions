@@ -21,6 +21,7 @@ jobs:
       run: |
         ansible-lint *.yml
   open-pull-request:
+    if: success()
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
