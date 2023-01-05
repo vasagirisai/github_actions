@@ -32,7 +32,7 @@ jobs:
         with:
           commit-message: 'Updates to main branch'
           title: 'Update to main branch'
-          body: 'This pull request updates the main branch with the latest changes.'
+          body: 'This pull request updates the main branch with the latest changes in main.'
           labels: 'update, main'
           reviewers: 'vasagirisai'
           assignees: 'vasagirisai'
