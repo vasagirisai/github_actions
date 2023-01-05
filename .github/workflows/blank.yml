@@ -16,8 +16,6 @@ jobs:
         python-version: 3.7
     - name: Install dependencies
       run: |
-        sudo apt update
-        sudo apt install ansible
         sudo python -m pip install ansible-lint
     - name: Run ansible-lint
       run: |
