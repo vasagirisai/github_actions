@@ -22,19 +22,13 @@ jobs:
     - name: Run ansible-lint
       run: |
         ansible-lint *.yml
-  
-  create-pull-request:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          commit-message: 'Updates to main branch'
-          title: 'Update to main branch'
-          body: 'This pull request updates the main branch with the latest changes in main.'
-          labels: 'update, main'
-          reviewers: 'vasagirisai'
-          assignees: 'vasagirisai'
-          branch: 'main'
-          token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Raise PR 1
+      uses: peter-evans/create-pull-request@v3
+      with:
+        branch: "main"
+        base: vasagirisai-patch-1
+        title: "demo for auto pr1"
+        body:
+            This is to show automatic PR creation
+        token: ${{ secrets.GITHUB_TOKEN }}
+        reviewers: vasagirisai
