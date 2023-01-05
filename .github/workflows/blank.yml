@@ -25,10 +25,9 @@ jobs:
     - name: Raise Pull Request
       uses: repo-sync/pull-request@v2
       with:
-        raise-pull-request: true
-        title: 'My Pull Request'
-        body: 'This is the body of my pull request'
-        base: 'main'
-        head: 'vasagirisai-patch-1'
-        labels: 'enchancement'
-        reviewers: 'vasagirisai'
+        source_branch: 'vasagirisai-patch-1'
+        destination_branch: 'main'
+        pr_title: 'My Pull Request'
+        pr_body: 'This is the body of my pull request'
+        pr_label: 'enchancement'
+        pr_reviewer: 'vasagirisai'
