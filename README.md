@@ -1,2 +1,2 @@
 # github_actions
-testing auto pR
+testing auto PR
