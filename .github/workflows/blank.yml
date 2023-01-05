@@ -3,7 +3,7 @@ name: ansible-lint
 on:
   push:
     branches:
-      - main
+      - vasagirisai-patch-1
 
 jobs:
   build:
@@ -22,13 +22,11 @@ jobs:
     - name: Run ansible-lint
       run: |
         ansible-lint *.yml
-    - name: Raise PR 1
-      uses: peter-evans/create-pull-request@v3
+    - name: pull-request
+      uses: repo-sync/pull-request@v2
       with:
-        branch: "vasagirisai-patch-1"
-        base: main
-        title: "demo for auto pr1"
-        body:
-            This is to show automatic PR creation
-        token: ${{ secrets.GITHUB_TOKEN }}
+        destination_branch: "main"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        pr_label: "feature, automated pr"
+        pr_title: "Demo"
         reviewers: vasagirisai
