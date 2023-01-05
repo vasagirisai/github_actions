@@ -1,5 +1,5 @@
 ---
-- name: To check the ansible lint
+- name: To check the ansible lint on all files
   hosts: all
   become: true
   tasks:
