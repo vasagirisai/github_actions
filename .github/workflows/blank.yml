@@ -1,9 +1,10 @@
 name: ansible-lint
 
 on:
-  push:
+  pull_request:
     branches:
-      - vasagirisai-patch-1
+      - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -22,12 +23,3 @@ jobs:
     - name: Run ansible-lint
       run: |
         ansible-lint *.yml
-    - name: Raise Pull Request
-      uses: peter-evans/create-pull-request@v4
-      with:
-        branch: 'main'
-        base: 'vasagirisai-patch-1'
-        title: 'My Pull Request'
-        body: 'This is the body of my pull request'
-        label: 'enchancement'
-        reviewers: 'vasagirisai'
