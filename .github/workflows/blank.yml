@@ -22,13 +22,19 @@ jobs:
     - name: Run ansible-lint
       run: |
         ansible-lint *.yml
-    - name: Check out repository code
-      uses: actions/checkout@v2
-    - name: create pull request
-      uses: repo-sync/pull-request@v2
-      with:
-        destination_branch: "main"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_label:  "automated pr"
-        pr_title: "auto assign pr"
-        Reviewers: "vasagirisai"
+  
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: 'Updates to main branch'
+          title: 'Update to main branch'
+          body: 'This pull request updates the main branch with the latest changes.'
+          labels: 'update, main'
+          reviewers: 'vasagirisai'
+          assignees: 'vasagirisai'
+          branch: 'main'
+          token: ${{ secrets.GITHUB_TOKEN }}
