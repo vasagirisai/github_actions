@@ -20,12 +20,8 @@ jobs:
     - name: Run ansible-lint
       run: |
         ansible-lint *.yml
-  open-pull-request:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
     - name: Raise Pull Request
-      if: github.event_name == 'push' && job.status == 'success'
+      if: success()
       uses: repo-sync/pull-request@v2
       with:
         source_branch: 'vasagirisai-patch-1'
