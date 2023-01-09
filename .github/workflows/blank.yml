@@ -27,7 +27,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH_PREFIX: vasagirisai-patch-2
-        PULL_REQUEST_TITLE: Automated PR
+        PULL_REQUEST_TITLE: Automated PR with pull request update
         PASS_IF_EXISTS: true
+        PULL_REQUEST_UPDATE: true
         PULL_REQUEST_BRANCH: "main"
         PULL_REQUEST_REVIEWERS: vasagirisai
