@@ -7,9 +7,3 @@
       ansible.builtin.apt:
         name: vim
         update_cache: true
-
-
-
-
-
-
