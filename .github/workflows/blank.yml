@@ -23,7 +23,7 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v2
     - name: create pull request
-      uses: vsoch/pull-request-action@master
+      uses: actions/create-pull-request@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH_PREFIX: vasagirisai-patch-2
