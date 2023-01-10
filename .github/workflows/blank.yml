@@ -22,9 +22,10 @@ jobs:
     - name: Create Pull Request
       uses: vasagirisai/actions@main
       with:
-        destination_branch: "main"
+        base:: "main"
+        branch: "vasagirisai-patch-2"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_label: "feature, automated pr"
-        pr_title: "[Example] Simple demo"
+        labels: "feature, automated pr"
+        title: "[Example] Simple demo"
         reviewers: vasagirisai
         
