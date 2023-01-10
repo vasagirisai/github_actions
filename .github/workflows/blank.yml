@@ -3,7 +3,7 @@ name: ansible-lint
 on:
   push:
     branches:
-      - vasagirisai-patch-1
+      - vasagirisai-patch-2
 
 jobs:
   build:
@@ -16,18 +16,9 @@ jobs:
         python-version: 3.7
     - name: Install dependencies
       run: |
-        sudo apt update
-        sudo apt install ansible
         sudo python -m pip install ansible-lint
     - name: Run ansible-lint
       run: |
         ansible-lint *.yml
     - name: Raise Pull Request
       uses: peter-evans/create-pull-request@v4
-      with:
-        branch: 'main'
-        base: 'vasagirisai-patch-1'
-        title: 'My Pull Request'
-        body: 'This is the body of my pull request'
-        label: 'enchancement'
-        reviewers: 'vasagirisai'
