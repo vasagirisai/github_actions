@@ -18,7 +18,7 @@ jobs:
       run: |
         ansible-lint *.yml
     - name: Create Pull Request
-      uses: vasagirisai/action/praction.yml@main
+      uses: vasagirisai/actions/praction.yml@main
       with:
         destination_repository: main
         source_branch: vasagirisai-patch-2
