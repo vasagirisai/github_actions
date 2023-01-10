@@ -3,8 +3,6 @@ name: ansible-lint
 on:
   push:
     branches: [vasagirisai-patch-2]
-  pull_request:
-    branches: [main]
 
 jobs:
   build:
@@ -22,6 +20,6 @@ jobs:
       run: |
         ansible-lint *.yml
     - name: create pull request
-      run: gh pr create -B main -H vasagirisai-patch-2 --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
+      run: gh pr create -B main -H vasagirisai-patch-2 --title 'testing auto pr' --body 'Created by Github action' --reviewers 'vasagirisai'
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
