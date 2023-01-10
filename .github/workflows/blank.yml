@@ -20,7 +20,7 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v2
     - name: Create Pull Request
-      uses: vasagirisai/actions/action.yaml@main
+      uses: vasagirisai/actions@main
       with:
         destination_repository: main
         source_branch: vasagirisai-patch-2
