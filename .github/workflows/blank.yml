@@ -26,6 +26,6 @@ jobs:
         source_branch: "vasagirisai-patch-2"
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_label: "feature, automated pr"
-        pr_title: "[Example] Simple demo"
+        pr_title: "Auto PR"
         pr_reviewer: vasagirisai
         
