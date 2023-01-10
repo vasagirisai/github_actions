@@ -1,9 +1,6 @@
 name: ansible-lint
 
-on:
-  push:
-    branches:
-      - vasagirisai-patch-1
+on: [push]
 
 jobs:
   build:
@@ -22,12 +19,12 @@ jobs:
     - name: Run ansible-lint
       run: |
         ansible-lint *.yml
-    - name: Raise Pull Request
+    - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
-        branch: 'main'
-        base: 'vasagirisai-patch-1'
-        title: 'My Pull Request'
-        body: 'This is the body of my pull request'
-        label: 'enchancement'
-        reviewers: 'vasagirisai'
+        commit-message: Cloud - Update available list
+        title: Cloud - Update available list
+        body: Cloud - Update available list
+        base: vasagirisai-patch-1
+        labels: automated-pr, Clouds & Regions
+        branch: main
