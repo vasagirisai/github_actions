@@ -19,12 +19,10 @@ jobs:
     - name: Run ansible-lint
       run: |
         ansible-lint *.yml
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v4
+    - name: Create pull request
+      uses: thomaseizinger/create-pull-request@master
       with:
-        commit-message: Cloud - Update available list
-        title: Cloud - Update available list
-        body: Cloud - Update available list
-        base: vasagirisai-patch-1
-        labels: automated-pr, Clouds & Regions
-        branch: main
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        head: vasagirisai-patch-2
+        base: main
+        title: "An automatically created PR!"
