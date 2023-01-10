@@ -17,6 +17,9 @@ jobs:
     - name: Run ansible-lint
       run: |
         ansible-lint *.yml
+    - name: checkout
+      run: |
+        git clone https://github.com/vasagirisai/actions/blob/main/action.yaml
     - name: Create Pull Request
       uses: vasagirisai/actions/action.yaml@main
       with:
