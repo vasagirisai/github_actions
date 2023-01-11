@@ -1,28 +1,5 @@
-name: ansible-lint
-
-on: [push]
 
 jobs:
-  build:
+  prForMasterBranch:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.7
-    - name: Install dependencies
-      run: |
-        sudo python -m pip install ansible-lint
-    - name: Run ansible-lint
-      run: |
-        ansible-lint *.yml > lintcheck.txt
-    - name: Check out repository code
-      uses: actions/checkout@v2
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v4
-      with:
-        branch: vasagirisai-patch-2
-        labels: report
-        reviewers: vasagirisai
-
+    steps
