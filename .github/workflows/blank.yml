@@ -17,10 +17,10 @@ jobs:
         python-version: 3.7
     - name: Install dependencies
       run: |
-        sudo python -m pip install ansible-lint
+        sudo python -m pip update ansible-lint
     - name: Run ansible-lint
       run: |
-        ansible-lint *.yml > lintcheck.txt
+        ansible-lint *.yml
     - name: Reset master branch
       run: |
           git fetch origin vasagirisai-patch-2:vasagirisai-patch-2
