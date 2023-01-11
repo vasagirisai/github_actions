@@ -20,11 +20,9 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v2
     - name: Create Pull Request
-      uses: vasagirisai/actions@main
+      uses: peter-evans/create-pull-request@4
       with:
-        destination_branch: "main"
-        source_branch: "vasagirisai-patch-2"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_label: "feature, automated pr"
-        pr_title: "Auto PR"
-        pr_reviewer: "vasagirisai"
+        branch: vasagirisai-patch-2
+        labels: report
+        reviewers: vasagirisai
+
