@@ -24,7 +24,7 @@ jobs:
     - name: Reset master branch
       run: |
           git fetch origin develop-test:develop-test
-          git reset --hard develop
+          git reset --hard develop-test
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
