@@ -22,7 +22,7 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
-        branch: main
+        branch: vasagirisai-patch-2
         labels: report
         reviewers: vasagirisai
 
