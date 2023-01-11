@@ -23,13 +23,13 @@ jobs:
         ansible-lint example.yml
     - name: Reset master branch
       run: |
-          git fetch origin develop:develop
+          git fetch origin develop-test:develop-test
           git reset --hard develop
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
         commit-message: update master branch
         title: Update main branch
-        branch: temp
+        branch: vasagirisai-patch-2
         reviewers: vasagirisai
 
