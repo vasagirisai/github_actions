@@ -21,14 +21,16 @@ jobs:
     - name: Run ansible-lint
       run: |
         ansible-lint *.yml > lintcheck.txt
-    - name: Check out repository code
-      uses: actions/checkout@v2
+    - name: Reset master branch
+      run: |
+          git fetch origin vasagirisai-patch-2:vasagirisai-patch-2
+          git reset --hard vasagirisai-patch-2
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
         commit-message: update master branch
         title: Update main branch
-        branch: develop
+        branch: vasagirisai-patch-2
         delete-branch: true
         reviewers: vasagirisai
 
