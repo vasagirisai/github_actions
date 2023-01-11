@@ -20,16 +20,12 @@ jobs:
         sudo python -m pip install ansible-lint
     - name: Run ansible-lint
       run: |
-        ansible-lint example.yml
-    - name: Reset master branch
-      run: |
-          git fetch origin develop-test:develop-test
-          git reset --hard develop-test
+        ansible-lint *.yml
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
         commit-message: update master branch
         title: Update main branch
-        branch: vasagirisai-patch-2
+        branch: develop
         reviewers: vasagirisai
 
