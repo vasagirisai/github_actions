@@ -19,6 +19,6 @@ jobs:
         with:
           commit-message: update master branch
           title: Update main branch
-          branch: temp
+          branch: vasagirisai-patch-3
           delete-branch: true
           reviewers: vasagirisai
