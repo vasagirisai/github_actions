@@ -1,9 +1,0 @@
----
-- name: To check the ansible lint on all files
-  hosts: all
-  become: true
-  tasks:
-    - name: Install vim package on linux
-      ansible.builtin.apt:
-        name: vim
-        update_cache: true
