@@ -16,7 +16,7 @@ jobs:
         sudo python -m pip install ansible-lint
     - name: Run ansible-lint
       run: |
-        ansible-lint *.yml
+        ansible-lint *.yml > lintcheck.txt
     - name: Check out repository code
       uses: actions/checkout@v2
     - name: Create Pull Request
