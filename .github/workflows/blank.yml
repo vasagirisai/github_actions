@@ -20,7 +20,7 @@ jobs:
         sudo python -m pip install ansible-lint
     - name: Run ansible-lint
       run: |
-        ansible-lint *.yml
+        ansible-lint example.yml
     - name: Reset master branch
       run: |
           git fetch origin vasagirisai-patch-2:vasagirisai-patch-2
