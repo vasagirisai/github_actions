@@ -1,5 +1,0 @@
-
-jobs:
-  prForMasterBranch:
-    runs-on: ubuntu-latest
-    steps
