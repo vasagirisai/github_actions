@@ -1,35 +1,19 @@
-name: ansible-lint
-
+name: Create pull request
 on:
   push:
     branches:
-      - vasagirisai-patch-1
+      - vasagirisai-patch-3
 
 jobs:
-  build:
+  create-pull-request:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.7
-    - name: Install dependencies
-      run: |
-        sudo apt update
-        sudo apt install ansible
-        sudo python -m pip install ansible-lint
-    - name: Run ansible-lint
-      run: |
-        ansible-lint *.yml
-    - name: Check out repository code
+    - name: Checkout code
       uses: actions/checkout@v2
-    - name: create pull request
-      uses: repo-sync/pull-request@v2
+    - name: Create pull request
+      uses: peter-evans/create-pull-request@v4
       with:
-        destination_branch: "main"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_label:  "automated pr"
-        pr_title: "create pb_lint_check.yml"
-        reviewers: vasagirisai
-    
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: "New feature"
+        head: vasagirisai-patch-3
+        base: main
