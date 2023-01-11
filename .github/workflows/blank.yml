@@ -1,6 +1,8 @@
 name: ansible-lint
 
-on: [push]
+on: 
+  push:
+    branches: vasagirisai-patch-2
 
 jobs:
   productionPromotion:
