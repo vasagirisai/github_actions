@@ -17,7 +17,8 @@ jobs:
         commit-message: Update
         committer: GitHub Action Bot <action@github.com>
         author: GitHub Action Bot <action@github.com>
-        branch: main
+        base: vasagitisai-patch-2
+        branch: develop
         branch-suffix: timestamp
         assignees: mietzen
         labels: |
