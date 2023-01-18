@@ -28,7 +28,7 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
-        branch: vasagirisai-patch-1
+        base: develop
         title: Created by github actions
         labels: enchacement
         milestone: 1
