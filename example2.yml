@@ -7,3 +7,7 @@
       ansible.builtin.yum:
         name: nginx
         update_cache: true
+    - name: install nginx
+      yum:
+        name: nginx
+        state: latest
