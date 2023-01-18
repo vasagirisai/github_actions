@@ -1,8 +1,6 @@
 name: Create pull request
 on:
   push:
-    branches:
-      - vasagirisai-patch-2
 
 jobs:
   create-pull-request:
