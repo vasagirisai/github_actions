@@ -2,7 +2,7 @@ name: Create pull request
 on:
   push:
     branches:
-      - vasagirisai-patch-4
+      - vasagirisai-patch-2
 
 jobs:
   create-pull-request:
@@ -10,10 +10,18 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    - name: Create pull request
-      uses: peter-evans/create-pull-request@v3
+    - name: Create Pull Request
+      id: pr
+      uses: peter-evans/create-pull-request@v4
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        title: "Automatic pull request from feature branch"
-        branch: develop
-        base: vasagirisai-patch-4
+        delete-branch: false
+        title: '[Github Action Bot] Update'
+        commit-message: Update
+        committer: GitHub Action Bot <action@github.com>
+        author: GitHub Action Bot <action@github.com>
+        branch: vasagirisai-patch-2
+        branch-suffix: timestamp
+        assignees: mietzen
+        labels: |
+            automated pr
+            update
