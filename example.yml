@@ -7,3 +7,7 @@
       ansible.builtin.apt:
         name: vim
         update_cache: true
+    - name: install net-tools
+      yum:
+        name: net-tools
+        state: latest
