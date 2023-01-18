@@ -8,19 +8,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    - name: Make changes to pull request
+      run: date +%s > report1.txt
     - name: Create Pull Request
-      id: pr
       uses: peter-evans/create-pull-request@v4
       with:
-        delete-branch: false
-        title: '[Github Action Bot] Update'
-        commit-message: Update
-        committer: GitHub Action Bot <action@github.com>
-        author: GitHub Action Bot <action@github.com>
-        base: vasagirisai-patch-2
-        branch: develop
-        branch-suffix: timestamp
-        assignees: mietzen
-        labels: |
-            automated pr
-            update
+          branch: vasagirisai-patch-2
